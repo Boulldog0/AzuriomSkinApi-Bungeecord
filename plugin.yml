@@ -1,0 +1,14 @@
+name: AzuriomSkinAPIBungeecord
+version: 1.0
+author: Boulldogo
+description: AzuriomSkinAPI pour Bungeecord
+main: fr.Boulldogo.AzuriomSkinApiBungeecord.Main
+api: BungeeCord
+commands:
+  skin-update:
+    description: Permet d'update son propre skin
+    permission: azuriomskinapi.skin-update
+  forceupdate-skin:
+    description: Permet d'update le skin d'autres joueurs
+    permission: azuriomskinapi.forceupdate-skin
+

@@ -1,0 +1,29 @@
+package fr.Boulldogo.AzuriomSkinApiBungeecord;
+
+import net.md_5.bungee.api.plugin.Plugin;
+import net.md_5.bungee.config.Configuration;
+
+public class Main extends Plugin {
+
+    private Configuration config;
+
+    @Override
+    public void onEnable() {
+        getLogger().info("Le plugin AzuriomSkinApi a été chargé.");
+
+
+
+        getProxy().getPluginManager().registerCommand(this, new SkinUpdateCommand(this));
+        getProxy().getPluginManager().registerCommand(this, new ForceUpdateSkinCommand(this));
+    }
+
+    @Override
+    public void onDisable() {
+        getLogger().info("Le plugin AzuriomSkinApi a été désactivé.");
+    }
+
+
+    public Configuration getConfigManager() {
+        return config;
+    }
+}
