@@ -1,7 +1,9 @@
 # AzuriomSkinAPIBungeecord
 **Plugin minecraft permettant d'auto-update son skin via l'api SkinAPI de Azuriom**
 
-**Une update du plugin AzuriomSkinAPI mais configuré pour les serveurs fonctionnant sous Bungeecord, Waterfall ou encore Vélocity**
+**Une update du plugin AzuriomSkinAPI mais configuré pour les serveurs fonctionnant sous Bungeecord, Waterfall ou autres version utilisant l'API Bungeecord**
+
+**Edit : Le plugin ne fonctionne PAS sur vélocity**
 
 # Le plugin utilise le sous plugin SkinRestorer afin d'appliquer un skin venant de l'api SkinApi de votre site a un utilisateur quand il se connecte ou, si il le change sur le site en étant connecté, pouvoir l'update via une commande.
 
