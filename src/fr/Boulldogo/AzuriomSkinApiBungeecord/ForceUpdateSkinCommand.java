@@ -25,9 +25,16 @@ public class ForceUpdateSkinCommand extends Command {
 
                     if (target != null && target.isConnected()) {
                         String skinUrl = plugin.getConfigManager().getString("skin_api_url").replace("{player}", playerName);
-                        String commandToExecute = "skin set " + playerName + " " + skinUrl;
-
-                        plugin.getProxy().getPluginManager().dispatchCommand(plugin.getProxy().getConsole(), commandToExecute);
+                        String commandBefore = "skin set " + playerName + " " + skinUrl;
+                        String commandNow = "skin set " + skinUrl + " " + playerName;
+                        
+                        boolean beforeCommand = plugin.getConfigManager().getBoolean("use-ancient-command");
+                        
+                        if (!beforeCommand) {
+                        plugin.getProxy().getPluginManager().dispatchCommand(plugin.getProxy().getConsole(), commandNow);
+                        } else {
+                        plugin.getProxy().getPluginManager().dispatchCommand(plugin.getProxy().getConsole(), commandBefore);
+                        }
 
                         if (plugin.getConfigManager().getBoolean("send_success_message")) {
                             String forceUpdateMessageSuccess = ChatColor.translateAlternateColorCodes('&', plugin.getConfigManager().getString("force_update_success_message"));
