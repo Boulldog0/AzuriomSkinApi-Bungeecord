@@ -25,8 +25,8 @@ public class ForceUpdateSkinCommand extends Command {
 
                     if (target != null && target.isConnected()) {
                         String skinUrl = plugin.getConfigManager().getString("skin_api_url").replace("{player}", playerName);
-                        String commandBefore = "skin set " + playerName + " " + skinUrl;
-                        String commandNow = "skin set " + skinUrl + " " + playerName;
+                        String commandBefore = "skin set " + playerName + " " + skinUrl + ".png";
+                        String commandNow = "skin set " + skinUrl + " " + playerName + ".png";
                         
                         boolean beforeCommand = plugin.getConfigManager().getBoolean("use-ancient-command");
                         
@@ -42,21 +42,20 @@ public class ForceUpdateSkinCommand extends Command {
                         }
 
                         if (plugin.getConfigManager().getBoolean("send_console_logs")) {
-                            String logMessage = ChatColor.translateAlternateColorCodes('&', "Skin de " + playerName + " changé avec succès.");
-                            plugin.getLogger().info(logMessage);
+                            plugin.getLogger().info("Skin of player " + playerName + " update with success !");
                         }
                     } else {
                         String forceUpdateMessageNoPlayer = ChatColor.translateAlternateColorCodes('&', plugin.getConfigManager().getString("no_player_connected"));
                         sender.sendMessage(forceUpdateMessageNoPlayer);
                     }
                 } else {
-                    sender.sendMessage(ChatColor.RED + "Utilisation : /forceupdate-skin <utilisateur>");
+                    sender.sendMessage(ChatColor.RED + "Usage : /forceupdate-skin <utilisateur>");
                 }
             } else {
-                player.sendMessage(ChatColor.RED + "Vous n'avez pas la permission d'utiliser cette commande.");
+                player.sendMessage(ChatColor.RED + "You have not the permission for this.");
             }
         } else {
-            sender.sendMessage(ChatColor.RED + "Seuls les joueurs peuvent utiliser cette commande !");
+            sender.sendMessage(ChatColor.RED + "Only online players can be use that command !");
         }
     }
     

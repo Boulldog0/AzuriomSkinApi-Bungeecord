@@ -3,6 +3,9 @@
 # L'URL de l'API Skin. N'oubliez pas de mettre {player} pour que le skin appliqué soit celui de chaque utilisateur.
 skin_api_url: "https://votre-url.com/{player}"
 
+#Define if you want to use ancient command ( before versions of SkinRestorer ) or no.
+use-ancient-command: false
+
 # Envoyer un message de succès au joueur quand le skin est changé automatiquement
 send_success_message: true
 

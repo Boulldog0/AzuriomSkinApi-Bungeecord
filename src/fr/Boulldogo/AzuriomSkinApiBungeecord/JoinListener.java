@@ -21,8 +21,8 @@ public class JoinListener implements Listener {
 
         String skinUrl = plugin.getConfigManager().getString("skin_api_url").replace("{player}", playerName);
 
-        String commandBefore = "skin set " + playerName + " " + skinUrl;
-        String commandNow = "skin set " + skinUrl + " " + playerName;
+        String commandBefore = "skin set " + playerName + " " + skinUrl + ".png";
+        String commandNow = "skin set " + skinUrl + " " + playerName + ".png";
         
         boolean beforeCommand = plugin.getConfigManager().getBoolean("use-ancient-command");
         
@@ -37,7 +37,7 @@ public class JoinListener implements Listener {
         }
 
         if (plugin.getConfigManager().getBoolean("send_console_logs")) {
-            plugin.getLogger().info(ChatColor.translateAlternateColorCodes('&', "Skin de " + playerName + " changé avec succès."));
+            plugin.getLogger().info("Skin of player " + playerName + " update with success !");
         }
     }
 }
